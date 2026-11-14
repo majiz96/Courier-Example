@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use Livewire\Attributes\Validate;
 use Livewire\Component;
 
 class Test extends Component
@@ -10,6 +11,9 @@ class Test extends Component
     public bool $show = false;
 
     public string $status ='';
+
+    #[Validate('date')]
+    public $birthday;
 
 
     public function render()

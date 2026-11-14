@@ -13,5 +13,47 @@
         </div>
     @endif
 
+    <form method="POST" action="{{ route('test.birthday') }}">
+        @csrf
+
+        <div class="mb-3">
+            <label class="form-label">تاریخ تولد</label>
+
+            @if (app()->getLocale() == 'fa')
+                <input
+                    type="text"
+                    name="birthday"
+                    class="form-control"
+                    data-jdp
+                    placeholder="تاریخ تولد"
+                    wire:model="birthday"
+                >
+
+                @error('birthday')
+                <div class="text-danger mt-1">
+                    {{ $message }}
+                </div>
+                @enderror
+            @else
+                <input
+                    type="date"
+                    name="birthday"
+                    class="form-control"
+                    wire:model="birthday"
+                >
+
+                @error('birthday')
+                <div class="text-danger mt-1">
+                    {{ $message }}
+                </div>
+                @enderror
+            @endif
+        </div>
+
+        <button type="submit" class="btn btn-solid theme-primary">
+            ثبت تاریخ
+        </button>
+    </form>
+
 
 </div>
