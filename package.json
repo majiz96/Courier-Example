@@ -8,6 +8,7 @@
     },
     "dependencies": {
         "@laravel/passkeys": "^0.2.0",
+        "@majidh1/jalalidatepicker": "^1.0.0",
         "@tailwindcss/vite": "^4.1.11",
         "bootstrap": "^6.0.0-alpha.1",
         "concurrently": "^10.0.3",
