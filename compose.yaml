@@ -71,6 +71,18 @@ services:
             test: [ 'CMD', 'redis-cli', 'ping' ]
             retries: 3
             timeout: 5s
+    reverb:
+        image: 'sail-8.5/app'
+        ports:
+            - '8080:8080'
+        volumes:
+            - '.:/var/www/html'
+        working_dir: /var/www/html
+        networks:
+            - sail
+        entrypoint: [ '/bin/bash', '-c' ]
+        command: 'php artisan reverb:start --host=0.0.0.0 --port=8080'
+        user: '${WWWUSER:-1000}:${WWWGROUP:-1000}'
 
 networks:
     sail:
