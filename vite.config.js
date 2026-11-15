@@ -21,6 +21,8 @@ export default defineConfig({
         tailwindcss(),
     ]),
     server: {
+        port: 3000,
+        strictPort: true,
         cors: true,
         watch: {
             ignored: [
