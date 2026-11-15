@@ -164,13 +164,4 @@ return [
         ],
     ],
 
-    'attributes' => [
-        'birthday' => 'تاریخ تولد',
-    ],
-    'values' => [
-        'before_or_equal' => [
-            'today' => 'امروز',
-        ],
-    ],
-
 ];
